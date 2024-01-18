@@ -1,4 +1,6 @@
 console.log('main loaded')
+let quizScore=0;
+let endScore= document.querySelector('.end-score');
 
 const quizData = [
     {
@@ -6,6 +8,22 @@ const quizData = [
         options: ['Paris', 'Berlin', 'Madrid', 'Rome'],
         correctAnswer: 'Paris'
     },
+    {
+        question: 'What is the capital of Spain?',
+        options: ['Paris', 'Berlin', 'Madrid', 'Rome'],
+        correctAnswer: 'Madrid'
+    },
+    {
+        question: 'What is the capital of Italy?',
+        options: ['Paris', 'Berlin', 'Madrid', 'Rome'],
+        correctAnswer: 'Rome'
+    },
+    {
+        question: 'What is the capital of Germany?',
+        options: ['Paris', 'Berlin', 'Madrid', 'Rome'],
+        correctAnswer: 'Berlin'
+    }
+
     // Add more questions and answers as needed
 ];
 
@@ -36,6 +54,7 @@ function checkAnswer() {
     if (userAnswer === currentQuizData.correctAnswer) {
         // Handle correct answer
         console.log('Correct!');
+        quizScore +=1;
     } else {
         // Handle incorrect answer
         console.log('Incorrect!');
@@ -47,7 +66,7 @@ function checkAnswer() {
         displayQuestion();
     } else {
         // Display quiz results or navigate to a new page
-        console.log('Quiz completed!');
+        endScore.innerHTML+=quizScore +"/"+ "4";
     }
 }
 
