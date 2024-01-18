@@ -30,8 +30,8 @@ const quizData = [
 let currentQuestion = 0;
 
 function displayQuestion() {
-    const questionElement = document.getElementById('question');
-    const optionsElement = document.getElementById('options');
+    const questionElement = document.querySelector('#question');
+    const optionsElement = document.querySelector('#options');
     const currentQuizData = quizData[currentQuestion];
 
     questionElement.textContent = currentQuizData.question;
@@ -70,7 +70,7 @@ function checkAnswer() {
     }
 }
 
-document.getElementById('options').addEventListener('click', (event) => {
+document.querySelector('#options').addEventListener('click', (event) => {
     const selectedOptions = document.querySelectorAll('li');
     selectedOptions.forEach((option) => {
         option.classList.remove('selected');
